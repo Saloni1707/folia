@@ -1,8 +1,8 @@
 "use client"
 import Cards from "./components/cards";
+import reachme from "./components/reachme";
 import TriangleCursor from "./components/trianglecursor/triangle";
 import TypeAnimation from "./components/typewriter.tsx/typeAnimation";
-
 
 export default function Home() {
   return (
@@ -19,7 +19,17 @@ export default function Home() {
             />
           </div>
         </Cards>
+        <div className="fixed top-10 right-15">
+          <Cards height={50} width={180}>
+            <div>Hello</div>
+          </Cards>
+        </div>
 
+        {/* scrollbar */}
+        <div className="fixed top-10 left-15">
+          <Cards height={850} width={50}></Cards>
+        </div>
+        {/* //footer */}
         <div className="fixed bottom-10 right-15 z-50 cursor-hover-target" data-hover-text="My Playlist!">
           <img src="barcode.svg" alt="barcode" className="w-35 h-auto" />
         </div>
