@@ -12,12 +12,14 @@ export default function SocialButtonProps ({Icon,label,href,color}:SocialButtonP
     return(
         <Link href={href} target="_blank">
             <div
-            className={`flex items-center gap-2 px-4 py-2 rounded-full border hover:scale-105 transition-all shadow-md ${color ?? "bg-white text-black hover:bg-gray-100"}`}
+            className={`flex items-center gap-2 px-4 py-2 rounded-full border hover:scale-105 transition-all shadow-md cursor-pointer ${color ?? "bg-white text-black hover:bg-gray-100"}`}
             >
                 <Icon size={20} />
-                <span className="font-mdeium">
-                    {label}
-                </span>
+                {label && label.trim() !== "" && (
+    <span className="font-mdeium">
+        {label}
+    </span>
+) }
 
             </div>
         </Link>
