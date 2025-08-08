@@ -7,7 +7,7 @@ import TypeAnimation from "./components/typewriter.tsx/typeAnimation";
 import SoundWave from "./components/ui/sound";
 
 import React, { useState, useRef } from "react";
-import Project from "./components/Projects/projects";
+import ProjectsCarousel from "./components/Projects/projects";
 
 export default function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -38,25 +38,16 @@ export default function Home() {
         </div>
 
         {/* //Main character energy */}
-        <div className="fixed top-10 left-15">
-          <Project
-            name="Project 1"
-            description="Description of Project 1"
-            image="https://via.placeholder.com/150"
-            link="https://github.com/username/project1"
-            github="https://github.com/username/project1"
-          />
+
+        <div className="w-full flex justify-center items-center min-h-screen">
+          <div className="cursor-hover-target relative" data-hover-text="click to view projects">
+            <Cards height={600} width={700}>
+              <ProjectsCarousel />
+            </Cards>
+          </div>
         </div>
-
-        <span className="w-full flex justify-center mt-16">
-          <TypeAnimation
-              words={["Hi! Saloni here!","Building something great!","Creative Design","Full Stack Developer"]}
-              typingSpeed={180}
-              deletingSpeed={270}
-              delayBetweenWords={2700}
-            />
-        </span>
-
+        
+          
         {/* scrollbar */}
         <div className="fixed top-10 left-15">
           <Cards height={850} width={50}>
